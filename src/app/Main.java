@@ -1,7 +1,11 @@
 package app;
 
 import model.entities.Cliente;
+import model.entities.Conta;
 import model.entities.ContaCorrente;
+import model.entities.DepositoInicial;
+
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,6 +17,22 @@ public class Main {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
         try {
+            System.out.println("Abertura da Conta: ");
+            System.out.print("Digite o número da conta: ");
+            Integer numero = sc.nextInt();
+            System.out.print("Digite o código da agência: ");
+            String agencia = sc.next();
+            System.out.print("Favor realizar deposito: ");
+            Double saldo = DepositoInicial.depositoObrigatorio(sc.nextDouble());
+            ContaCorrente contaCorrente = new ContaCorrente(numero, agencia, saldo);
+
+            System.out.println(contaCorrente);
+
+
+
+
+
+
             System.out.println("Cadastro do Cliente");
             System.out.print("Nome do Cliente: ");
             sc.next();
@@ -23,12 +43,17 @@ public class Main {
             String cpf = sc.next();
             System.out.print("Data de nascimento: (dd/MM/yyyy): ");
             Date dataNascimento = sdf.parse(sc.next());
-            Cliente cliente = new Cliente(nome,email,cpf,dataNascimento);
-            System.out.println("Cliente " + cliente);
+
+
+
         }
         catch (ParseException e) {
             System.out.println("Data de nascimento inválida: ");
         }
+
+
+
+
 
 
 

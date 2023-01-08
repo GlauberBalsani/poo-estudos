@@ -11,15 +11,17 @@ public class Cliente {
     private String email;
     private String cpf;
     private Date dataNascimento;
+    private Conta conta;
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 
-    public Cliente(String nome, String email, String cpf, Date dataNascimento) {
+    public Cliente(String nome, String email, String cpf, Date dataNascimento, Conta conta) {
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
+        this.conta = conta;
     }
 
     public String getNome() {

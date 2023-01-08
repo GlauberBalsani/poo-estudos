@@ -4,22 +4,22 @@ import model.exception.RegraNegocioException;
 
 public abstract class Conta {
     private Integer numeroConta;
-    private Integer agencia;
-    private Double saldo;
-    private Cliente cliente;
+    private String agencia;
+    protected Double saldo;
 
-    public Conta(Integer numeroConta, Integer agencia, Double saldo, Cliente cliente) {
+
+    public Conta(Integer numeroConta, String agencia, Double saldo) {
         this.numeroConta = numeroConta;
         this.agencia = agencia;
-        this.saldo = saldo;
-        this.cliente = cliente;
+        deposita(this.saldo);
+
     }
 
     public Integer getNumeroConta() {
         return numeroConta;
     }
 
-    public Integer getAgencia() {
+    public String getAgencia() {
         return agencia;
     }
 
@@ -36,5 +36,10 @@ public abstract class Conta {
             throw new RegraNegocioException("Favor verificar o valor a ser depositado");
         }
         this.saldo -= valor;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
