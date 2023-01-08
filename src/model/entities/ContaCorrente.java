@@ -2,8 +2,10 @@ package model.entities;
 
 import model.exception.RegraNegocioException;
 
-public class ContaCorrente extends Conta implements DepositoInicial  {
+public class ContaCorrente extends Conta  {
     private Double limite = 1000.00;
+
+
     public ContaCorrente(Integer numeroConta, String agencia, Double saldo) {
 
         super(numeroConta, agencia, saldo);

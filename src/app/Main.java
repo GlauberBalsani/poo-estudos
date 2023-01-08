@@ -1,9 +1,6 @@
 package app;
 
-import model.entities.Cliente;
-import model.entities.Conta;
 import model.entities.ContaCorrente;
-import model.entities.DepositoInicial;
 
 
 import java.text.ParseException;
@@ -23,15 +20,13 @@ public class Main {
             System.out.print("Digite o código da agência: ");
             String agencia = sc.next();
             System.out.print("Favor realizar deposito: ");
-            Double saldo = DepositoInicial.depositoObrigatorio(sc.nextDouble());
+            Double saldo = sc.nextDouble();
             ContaCorrente contaCorrente = new ContaCorrente(numero, agencia, saldo);
 
             System.out.println(contaCorrente);
 
 
-
-
-
+            System.out.println();
 
             System.out.println("Cadastro do Cliente");
             System.out.print("Nome do Cliente: ");

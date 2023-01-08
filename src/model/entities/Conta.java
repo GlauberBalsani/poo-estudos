@@ -11,7 +11,8 @@ public abstract class Conta {
     public Conta(Integer numeroConta, String agencia, Double saldo) {
         this.numeroConta = numeroConta;
         this.agencia = agencia;
-        deposita(this.saldo);
+        this.saldo = saldo;
+
 
     }
 
