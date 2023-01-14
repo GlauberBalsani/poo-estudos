@@ -38,9 +38,14 @@ public abstract class Conta {
         }
         this.saldo -= valor;
     }
+    
+    public void transfere(Double valor, Conta conta) throws RegraNegocioException {
+    	this.saque(valor);
+    	conta.deposita(valor);
+    }
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Dados bancários \n" + "Número da Conta: " + numeroConta + "\n" + "Agência: " + agencia + "\n" + "Saldo: " + saldo;
     }
 }
