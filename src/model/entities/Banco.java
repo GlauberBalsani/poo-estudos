@@ -4,13 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Banco {
-    private List<Conta> contas;
+    private List<Cliente> clientes;
 
     public Banco() {
-        contas = new ArrayList<>();
+        clientes = new ArrayList<Cliente>();
     }
 
-    public void addConta(Conta conta) {
-        this.contas.add(conta);
+   public void addConta(Cliente cliente) {
+        this.clientes.add(cliente);
+    }
+    
+    @Override
+    public String toString() {
+    	for (Cliente c :  clientes) {
+    		System.out.println(clientes);
+    	}
+		return null;
+    	
     }
 }
