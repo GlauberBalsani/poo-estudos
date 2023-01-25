@@ -1,24 +1,54 @@
 package com.bank.entities;
 
 import com.bank.interfaces.BankAccount;
-import model.exception.RegraNegocioException;
+
 
 public class CheckingAccount implements BankAccount {
+    private Integer id;
     private Double balance;
-    private Double limite ;
+    private Double limit ;
+    private Client client;
 
 
 
-    public CheckingAccount(Double limit) {
-
-        this.limite = limit;
-
+    public CheckingAccount(int id, Double balance, Client client, double limit) {
+        this.id = id;
+        this.balance = balance;
+        this.client = client;
+        this.limit = limit;
     }
 
 
-    @Override
-    public String toString() {
-        return super.toString();
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(Double balance) {
+        this.balance = balance;
+    }
+
+    public Double getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Double limit) {
+        this.limit = limit;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     @Override

@@ -1,53 +1,50 @@
 package com.bank.entities;
 
-
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-
 public class Client {
 	private Integer id;
     private String name;
-    private String email;
-    private String cpf;
-    private Date birthDate;
+
     private SavingsAccount savingsAccount;
     private CheckingAccount checkingAccount;
 
 
-    private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
-
-    public Client(Integer id, String nome, String email, String cpf, Date dataNascimento) {
+    public Client(Integer id, String name) {
     	this.id = id;
         this.name = name;
-        this.email = email;
-        this.cpf = cpf;
-        this.dataNascimento = dataNascimento;
 
     }
     
     public Integer getId() {
-		return id;
+
+        return id;
 	}
 
-    public String getNome() {
-        return nome;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+    public String getName() {
+
+        return name;
     }
 
-    public String getCpf() {
-        return cpf;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Dados do cliente: \n" + 
-        		"Nome: " +  nome + 
-        		"\n" + "Email: " +   email + "\n" +  "Cpf: " + cpf + "\n" + conta + "\n" + "Banco: " +  banco;
+    public SavingsAccount getSavingsAccount() {
+        return savingsAccount;
+    }
+
+    public void setSavingsAccount(SavingsAccount savingsAccount) {
+        this.savingsAccount = savingsAccount;
+    }
+
+    public CheckingAccount getCheckingAccount() {
+        return checkingAccount;
+    }
+
+    public void setCheckingAccount(CheckingAccount checkingAccount) {
+        this.checkingAccount = checkingAccount;
     }
 }
